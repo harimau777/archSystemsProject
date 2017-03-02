@@ -1,0 +1,24 @@
+{
+  "name": "archsystemsproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harimau777/archSystemsProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harimau777/archSystemsProject/issues"
+  },
+  "homepage": "https://github.com/harimau777/archSystemsProject#readme",
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.15.0",
+    "request": "^2.79.0"
+  }
+}

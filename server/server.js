@@ -1,15 +1,30 @@
-var Express = require('express');
-var app = new Express();
-var compression = require('compression');
+const Express = require('express');
+const app = new Express();
+const compression = require('compression');
+
+const login = require('./login.js').login;
+const getProjects = require('./projects.js').getProjects;
+
+login('user1@test.com', 'user.1')
+.then(({token}) => getProjects(token))
+  .then(({results}) => {
+    console.log(results);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+.catch((err) => {
+  console.log(err);
+});
 
 //Middleware:
-app.use(compression());
+// app.use(compression());
 
 //Routing:
-app.use(express.static('../client/public'));
-app.post('/login', login(req, res));
-app.get('/projects', getProjectList(req, res));
-app.get('/projects/:id', getProject(req, res));
+// app.use(express.static('../client/public'));
+// app.post('/login', login(req, res));
+// app.get('/projects', getProjectList(req, res));
+// app.get('/projects/:id', getProject(req, res));
 
 
 //Routes:
