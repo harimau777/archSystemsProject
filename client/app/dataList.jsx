@@ -1,14 +1,18 @@
 import {getData} from './state/actions.js';
 import {DataPoint} from './dataPoint.jsx';
 
-const DataList = ({data, currentStream, token, handleRefresh}) => {
+const DataList = ({data, currentStream, token, handleRefresh, onClick}) => {
   return (
     <div className="data">
       <div className="accordionTab">
-        <h1>Data</h1>
+        <h1 onClick={() => onClick('dataBody')}>Data</h1>
       </div>
-      <div>
-        {displayData(data)}
+      <div className="accordionBody hiddenBody" id="dataBody">
+        <table>
+          <tbody>
+            {displayData(data)}
+          </tbody>
+        </table>
         <span className="button refreshButton" onClick={() => handleRefresh(token, currentStream)}>Refresh</span>
       </div>
     </div>

@@ -9,9 +9,9 @@ const App = ({token}) => {
   if (token) {
     return (
       <div className="app">
-        <ProjectListContainer />
-        <StreamListContainer />
-        <DataListContainer />
+        <ProjectListContainer onClick={toggleAccordion} />
+        <StreamListContainer onClick={toggleAccordion} />
+        <DataListContainer onClick={toggleAccordion} />
       </div>
     );
   } else {
@@ -22,6 +22,10 @@ const App = ({token}) => {
     );
   }
 };
+
+const toggleAccordion = (id) => {
+  _.each($('.accordionBody'), (tab) => ($(tab).attr('id') === id) ? ($(tab).removeClass('hiddenBody')) : ($(tab).addClass('hiddenBody')));
+}
 
 const mapStateToProps = (state) => {
   return {

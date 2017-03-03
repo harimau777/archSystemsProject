@@ -1,13 +1,13 @@
 import {ProjectContainer} from './project.jsx';
 import {getProjects} from './state/actions.js';
 
-const ProjectList = ({projects, token, handleRefresh}) => {
+const ProjectList = ({projects, token, handleRefresh, onClick}) => {
   return (
     <div className="projectList">
       <div className="accordionTab">
-        <h1>Projects</h1>
+        <h1 onClick={() => onClick('projectsBody')}>Projects</h1>
       </div>
-      <div>
+      <div className="accordionBody" id="projectsBody">
         {displayProjects(projects)}
         <span className="button refreshButton" onClick={() => handleRefresh(token)}>Refresh</span>
       </div>

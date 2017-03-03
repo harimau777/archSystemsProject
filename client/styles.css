@@ -1,0 +1,66 @@
+/*Body*/
+body {
+  background-color: #003133;
+  color: #FFD1AA;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label,
+span,
+h1 {
+  margin: 5px 5px;
+}
+
+.project,
+.stream {
+  margin: 10px 10px;
+}
+
+/*Buttons:*/
+.button {
+  padding: 5px;
+  background-color: #804615;
+  color: #D49B6A;
+  border-radius: 5px;
+  margin: 5px 5px;
+}
+
+/*Accordion:*/
+.accordionTab,
+.accordionBody {
+  border-radius: 5px;
+  background-color: #236467;
+  color: #D49B6A;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.accordionTab {
+  padding: 2px;
+  margin: 2px 2px;
+}
+
+.accordionBody {
+  margin: 0px 2px 10px 2px;
+  padding: 5px;
+}
+
+.hiddenBody {
+  display: none;
+}
+
+/*Data*/
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr, td {
+  border: 1px solid white;
+}
+
+td {
+  padding: 2px;
+}

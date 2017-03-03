@@ -1,8 +1,9 @@
 const DataPoint = ({key, dataPoint, selectStream}) => {
   return (
-    <div className="dataPoint">
-      {dataPoint.timestamp}
-    </div>
+    <tr className="dataPoint">
+      <td>{dataPoint.timestamp}</td>
+      <td>{dataPoint.value}</td>
+    </tr>
   );
 };
 

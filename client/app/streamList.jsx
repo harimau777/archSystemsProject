@@ -1,13 +1,13 @@
 import {StreamContainer} from './stream.jsx';
 import {getStreams} from './state/actions.js';
 
-const StreamList = ({streams, currentProject, token, handleRefresh}) => {
+const StreamList = ({streams, currentProject, token, handleRefresh, onClick}) => {
   return (
     <div className="streamList">
       <div className="accordionTab">
-        <h1>Streams</h1>
+        <h1 onClick={() => onClick('streamsBody')}>Streams</h1>
       </div>
-      <div>
+      <div className="accordionBody hiddenBody" id="streamsBody">
         {displayStreams(streams)}
         <span className="button refreshButton" onClick={() => handleRefresh(token, currentProject)}>Refresh</span>
       </div>

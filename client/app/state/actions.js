@@ -55,12 +55,22 @@ const getData = (token, slug) => {
       headers: {Authorization: `JWT ${token}`},
       method: "GET",
       success: (data, status) => {
-        dispatch(setData(data.results));
+        dispatch(setData(parseData(data)));
+        // dispatch(setData(data.results));
       },
       error: (request, error) => {console.log(error)}
     });
   };
 };
+
+const parseData = (data) => {
+  return _.map(data.results, (result) => {
+    return {
+      timestamp: result.timestamp,
+      value: result.int_value
+    }
+  });
+}
 
 export {setToken, setCurrentTab, setProjects, setCurrentProject, setStreams, setCurrentStream, setData};
 export {login, getProjects, getStreams, getData};
