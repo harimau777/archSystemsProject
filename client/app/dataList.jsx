@@ -8,9 +8,13 @@ const DataList = ({data, currentStream, token, startTime, endTime, setTimeRange,
         <h1 onClick={() => onClick('dataBody')}>Data</h1>
       </div>
       <div className="accordionBody hiddenBody" id="dataBody">
-        <input type="text" name="startTime" />
-        <input type="text" name="endTime" />
-        <span className=".button" onClick={() => setTimeRange()}>Set Time</span>
+        <div>
+          <label>Start Time:</label>
+          <input type="text" name="startTime" />
+          <label>End Time: </label>
+          <input type="text" name="endTime" />
+        </div>
+        <span className="button" onClick={() => setTimeRange()}>Set Time</span>
         <table>
           <tbody>
             {displayData(data, startTime, endTime)}
