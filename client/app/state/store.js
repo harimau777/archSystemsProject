@@ -7,7 +7,9 @@ const initialState = {
   currentProject: undefined,
   streams: [],
   currentStream: undefined,
-  data: []
+  data: [],
+  startTime: undefined,
+  endTime: undefined
 }
 
 let store = Redux.createStore(reducer, initialState, Redux.applyMiddleware(ReduxThunk.default));

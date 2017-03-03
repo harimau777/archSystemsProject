@@ -5,6 +5,8 @@ const setCurrentProject = (project) => {return {type: 'setCurrentProject', curre
 const setStreams = (streams) => {return {type: 'setStreams', streams: streams}};
 const setCurrentStream = (stream) => {return {type: 'setCurrentStream', currentStream: stream}};
 const setData = (data) => {return {type: 'setData', data: data}};
+const setStartTime = (startTime) => {return {type: 'setStartTime', startTime: startTime}};
+const setEndTime = (endTime) => {return {type: 'setEndTime', endTime: endTime}};
 
 //Thunks:
 function login() {
@@ -66,11 +68,16 @@ const getData = (token, slug) => {
 const parseData = (data) => {
   return _.map(data.results, (result) => {
     return {
-      timestamp: result.timestamp,
+      timestamp: formatTimeStamp(result.timestamp),
       value: result.int_value
     }
   });
 }
 
-export {setToken, setCurrentTab, setProjects, setCurrentProject, setStreams, setCurrentStream, setData};
+const formatTimeStamp = (timestamp) => {
+  const match = timestamp.match(/^(.+)T((?:\d\d\:){2}\d\d)/);
+  return match[1] + ' ' + match[2];
+}
+
+export {setToken, setCurrentTab, setProjects, setCurrentProject, setStreams, setCurrentStream, setData, setStartTime, setEndTime};
 export {login, getProjects, getStreams, getData};

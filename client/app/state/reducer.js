@@ -14,6 +14,10 @@ function reducer(state, action) {
       return Object.assign({}, state, {currentStream: action.currentStream});
     case 'setData':
       return Object.assign({}, state, {data: action.data});
+    case 'setStartTime':
+      return Object.assign({}, state, {startTime: action.startTime});
+    case 'setEndTime':
+      return Object.assign({}, state, {endTime: action.endTime});
     default:
       return state;
   }
